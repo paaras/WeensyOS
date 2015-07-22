@@ -1,0 +1,12 @@
+Response to Exercise 1: While sys_getpid () will eventually get called again,
+the register values will also have changed and sys_getpid () will not return
+the correct value.
+
+Response to Exercise 3: I added a p_wait value for to the process data
+structure. All processes initially have a a p_wait value of -5. If a process
+needs to wait it will have a value not equal to -5. The schedule() function
+will attempt to run blocked processes and will change their blocked state
+once they are able to finish.
+
+Response to Exercise 4: I never changed the state of the zombie processes to
+P_EMPTY so the kernel was limited to only running a few processes. 
